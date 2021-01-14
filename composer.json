@@ -72,6 +72,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-install-cmd": [
+            "@php -r \"file_exists('app/config/parameters.yml') || copy('app/config/parameters.yml.dist', 'app/config/parameters.yml');\"",
             "@symfony-scripts"
         ],
         "post-update-cmd": [
